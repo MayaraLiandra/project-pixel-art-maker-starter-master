@@ -1,9 +1,6 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
-// Your code goes here!
+/**
+* @description Handle form submittion and create the grid
+*/
 $('#sizePicker').submit( function(event) {
     event.preventDefault();
 
@@ -16,6 +13,11 @@ $('#sizePicker').submit( function(event) {
     addCellListener();
 });
 
+/**
+* @description Create the grid based on width and height params
+* @param {number} height
+* @param {number} width
+*/
 function makeGrid(height, width) {
     for(var i = 0; i < height; i++) {
         $('#pixelCanvas').append('<tr></tr>');
@@ -26,6 +28,9 @@ function makeGrid(height, width) {
     };
 };
 
+/**
+* @description Add event listener to table cells
+*/
 function addCellListener() {
     $('td').click( function(event) {
         var color = $('#colorPicker').val();
